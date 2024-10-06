@@ -1,11 +1,8 @@
 const std = @import("std");
-const util = @import("util.zig");
 const RocResult = @import("roc_std/roc_result.zig").RocResult;
-const RocStr = @import("roc_std/roc_str.zig").RocStr;
 
-const RocResultVoidVoid = RocResult(void, void);
+const RocResultI32Void = RocResult(i32, void);
 
-export fn roc_fx_stdoutLine(text: *RocStr) callconv(.C) RocResultVoidVoid {
-    _ = std.io.getStdOut().writer().print("{s}\n", .{util.str_to_c(text)}) catch void;
-    return RocResultVoidVoid.ok({});
+export fn roc_fx_test() callconv(.C) RocResultI32Void {
+    return RocResultI32Void.ok(500);
 }
