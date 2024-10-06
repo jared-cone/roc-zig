@@ -7,8 +7,7 @@ import pf.Native
 
 main : Task {} {}
 main =
-    _ = Stdout.line! "Getting result..."
+    # _ = Stdout.line! "Hello"
     result = Native.test! {}
     _ = Stdout.line! "Result=$(Num.toStr result)"
-    _ = Stdout.line! "Done"
     Task.ok {}

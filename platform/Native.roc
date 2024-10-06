@@ -7,4 +7,4 @@ hosted Native
 
 stdoutLine : Str -> Task {} {}
 
-test : {} -> Task i32 {}
+test : {} -> Task I32 {}
