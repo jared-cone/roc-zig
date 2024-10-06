@@ -106,7 +106,7 @@ extern fn roc__mainForHost_1_exposed_size() callconv(.C) i64;
 extern fn roc__mainForHost_0_caller(flags: *anyopaque, closure_data: *anyopaque, result: *anyopaque) callconv(.C) void;
 
 pub fn main() !void {
-    try std.io.getStdOut().writer().print("Launching app...\n", .{});
+    try std.io.getStdOut().writer().print("(host) Launching app...\n", .{});
 
     const size = @as(usize, @intCast(roc__mainForHost_1_exposed_size()));
     const captures = roc_alloc(size, @alignOf(u128));
@@ -114,6 +114,7 @@ pub fn main() !void {
 
     roc__mainForHost_1_exposed_generic(captures);
     const result: u8 = call_the_closure(captures);
+    try std.io.getStdOut().writer().print("(host) Exiting app...\n", .{});
     std.os.exit(result);
 }
 

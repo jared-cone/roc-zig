@@ -1,10 +1,16 @@
 hosted Native
     exposes [
         stdoutLine,
-        test,
+        doNothing,
+        returnI32,
+        printNum,
     ]
     imports []
 
 stdoutLine : Str -> Task {} {}
 
-test : {} -> Task I32 {}
+doNothing : {} -> Task {} {}
+
+returnI32 : I32 -> Task I32 {}
+
+printNum : I32 -> Task {} {}
