@@ -113,9 +113,9 @@ pub fn main() !void {
     defer roc_dealloc(captures, @alignOf(u128));
 
     roc__mainForHost_1_exposed_generic(captures);
-    const result: u8 = call_the_closure(captures);
-    try std.io.getStdOut().writer().print("(host) Exiting app...\n", .{});
-    std.os.exit(result);
+    const code: u8 = call_the_closure(captures);
+    try std.io.getStdOut().writer().print("(host) Exiting app... code={}\n", .{code});
+    std.os.exit(code);
 }
 
 fn call_the_closure(closure_data_ptr: *anyopaque) u8 {
