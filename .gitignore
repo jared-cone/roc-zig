@@ -1,0 +1,14 @@
+zig-cache/
+zig-out/
+
+platform/macos-arm64.o
+platform/linux-x64.a
+platform/libapp.so
+
+app
+
+generated-docs/
+
+platform/*.tar.br
+
+.DS_Store
