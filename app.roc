@@ -9,5 +9,6 @@ main : Task {} {}
 main =
     _ = Stdout.line! "Getting result..."
     result = Native.test! {}
-    _ = Stdout.line! "Result=$(result)"
+    _ = Stdout.line! "Result=$(Num.toStr result)"
+    _ = Stdout.line! "Done"
     Task.ok {}
